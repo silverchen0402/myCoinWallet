@@ -48,7 +48,7 @@
 							if($singleconfirmBalance > 0) {		// user has unconfirmed transactions
 								$unconfirmedBalance = $singleconfirmBalance - $userBalance;
 							}
-							echo "Current Balance: ". $singleconfirmBalance ."<br />";
+							echo "Current Balance: ". $userBalance ."<br />";
 							if((isset($unconfirmedBalance)) && ($unconfirmedBalance > 0)) {
 								echo "Unconfirmed Balance: ". $unconfirmedBalance ."<br />";
 							}
