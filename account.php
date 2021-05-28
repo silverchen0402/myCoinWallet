@@ -45,7 +45,7 @@
 							saveCurrentBalance($bitcoin, $_SESSION['sendaddress']);
 							
 							$userBalance = $_SESSION['userbalance'];
-							echo $userBalance;
+							echo $_SESSION['username'], $userBalance;
 							$singleconfirmBalance = number_format($bitcoin->getbalance($_SESSION['username'], 0),8); // set to zero, this is near instant, set to one one on the side of caution
 							if($singleconfirmBalance > 0) {		// user has unconfirmed transactions
 								$unconfirmedBalance = $singleconfirmBalance - $userBalance;
