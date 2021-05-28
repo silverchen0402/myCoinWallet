@@ -21,6 +21,7 @@
 							&nbsp;<input type="text" name="email" size="20"><br />
 							<input type="submit" value="submit" /><br /><br />
 							<?php
+							session_start();
 							$_SESSION['userid'] = 1;			// this is a substitute for a proper login system
 							$_SESSION['username'] = 'user1';
 							require_once('includes/config.php');
