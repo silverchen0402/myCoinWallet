@@ -24,11 +24,11 @@
 							$_SESSION['userid'] = 1;			// this is a substitute for a proper login system
 							$_SESSION['username'] = 'user1';
 							require_once('includes/config.php');
-							require_once('includes/jsonRPCClient.php');
+							require_once('includes/easybitcoin.php');
 							require_once('includes/bcfunctions.php');
 							
-							$bitcoin = new jsonRPCClient('https://' . USER . ':' . PASS . '@' . SERVER . ':' . PORT .'/',false);
-							
+							//$bitcoin = new jsonRPCClient('https://' . USER . ':' . PASS . '@' . SERVER . ':' . PORT .'/',false);
+							$bitcoin = new Bitcoin(USER,PASS,SERVER,8332);
 							// check for session address
 							if(isset($_SESSION['sendaddress'])) {
 								$sendaddress = refreshAddressIfStale($bitcoin,$_SESSION['sendaddress']); // session exists, check if its been used before
